@@ -1,0 +1,38 @@
+{
+  "name": "racechallenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VictorKunzler/raceChallenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VictorKunzler/raceChallenge/issues"
+  },
+  "homepage": "https://github.com/VictorKunzler/raceChallenge#readme",
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "babel": "^6.23.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "http-errors": "^1.8.0",
+    "jest": "^26.6.3",
+    "joi": "^17.3.0",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.4.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babel-cli": "^6.26.0"
+  }
+}
