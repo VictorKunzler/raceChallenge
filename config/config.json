@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "siteBuilder",
+    "password": "victor2011",
+    "database": "race",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "siteBuilder",
+    "password": "victor2011",
+    "database": "raceTest",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "siteBuilder",
+    "password": "victor2011",
+    "database": "raceProd",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

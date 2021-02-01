@@ -6,7 +6,7 @@ const uploadFile = async (file) => {
   const { race } = file;
 
   try {
-    await fileService.processFile(race);
+    return await fileService.processFile(race);
   } catch (e) {
     console.log(e);
     throw new httoErrors.BadRequest(fileErrors[e.message]);

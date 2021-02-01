@@ -1,9 +1,9 @@
 
 import express from 'express';
 import routes from './routes';
-const fileUpload = require('express-fileupload');
+import fileUpload from 'express-fileupload';
 
-// import createDbConnection from './utils/createDbConnection';
+import createDbConnection from './utils/createDbConnection';
 
 const app = express();
 const PORT = 3001;
@@ -16,7 +16,7 @@ app.use(fileUpload({
 
 app.use(routes);
 
-// createDbConnection();
+createDbConnection();
 
 app.listen(PORT, () => {
   console.log(`Server ${PORT}`);
