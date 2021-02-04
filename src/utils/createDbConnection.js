@@ -1,7 +1,7 @@
 import Sequelize from 'sequelize';
 import config from '../../config/config.json';
 
-export default function createDbConnection() {
+export default function createDbConnection(server) {
   const env = process.env.NODE_ENV ? process.env.NODE_ENV : 'development';
 
   const {
@@ -24,5 +24,6 @@ export default function createDbConnection() {
     })
     .catch(err => {
       console.error('Unable to connect to the database:', err);
+      server.close();
     });
 };

@@ -16,8 +16,8 @@ app.use(fileUpload({
 
 app.use(routes);
 
-createDbConnection();
-
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`Server ${PORT}`);
 });
+
+createDbConnection(server);
