@@ -1,7 +1,16 @@
-import automobileRepository from "../repository/automobile.repository";
+import automobileRepository from '../repository/automobile.repository';
+import raceClassificationRepository from '../repository/raceClassification.repository';
+
+const getCountPerTournament = async (tournamentId) => {
+  return await raceClassificationRepository.getCountAutomobilesTournament(tournamentId);
+};
+
+const get = async (options) => {
+  return await automobileRepository.get(options);
+};
 
 const getOrInsert = async ({ number, transaction }) => {
-  const automobile = await automobileRepository.getAutomobile({ number }, transaction);
+  const automobile = await get({ where: { number }, transaction });
   
   if (!automobile.length) return await automobileRepository.insert({ number }, transaction);
   
@@ -9,6 +18,8 @@ const getOrInsert = async ({ number, transaction }) => {
 };
 
 const automobileService = {
+  get,
+  getCountPerTournament,
   getOrInsert
 };
 

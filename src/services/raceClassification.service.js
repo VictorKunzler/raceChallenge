@@ -1,6 +1,10 @@
 import raceClassificationRepository from '../repository/raceClassification.repository';
 import pilotTournamentService from './pilotTournament.service';
 
+const get = async (options) => {
+  return await raceClassificationRepository.get(options);
+};
+
 const setPoints = data => {
   let points = 0;
 
@@ -57,6 +61,7 @@ const insert = async ({ race, data }, transaction) => {
 };
 
 const raceClassificationService = {
+  get,
   insert
 };
 

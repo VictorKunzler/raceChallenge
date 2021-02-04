@@ -11,7 +11,7 @@ const name = async (fileName = '') => {
     await date.validateAsync(`${month}-${day}-${year}`);
   } catch (e) {
     console.log(e);
-    throw new Error(201);
+    throw new Error(e.message);
   }
 
   return true;

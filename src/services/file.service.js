@@ -64,7 +64,7 @@ const saveFile = async ({ name, data }) => {
     await fs.writeFileSync(INPUT_FILE + name, data, 'binary');
   } catch (e) {
     console.log(e);
-    throw new Error(202);
+    throw new Error('Error to save file');
   }
 };
 
@@ -83,7 +83,7 @@ const processFile = async (file) => {
   await fileValidator.data(raceData);
 
   return await raceService.insertRace({
-    date: `${day}/${month}/${year}`,
+    date: `${year}/${month}/${day}`,
     year: year,
     data: raceData
   });

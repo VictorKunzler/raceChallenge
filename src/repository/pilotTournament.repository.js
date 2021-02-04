@@ -1,10 +1,7 @@
 import { PilotTournament } from '../../models';
 
-const get = async (where, transaction) => {
-  return await PilotTournament.findAll({
-    where,
-    transaction
-  });
+const get = async (options) => {
+  return await PilotTournament.findAll(options);
 };
 
 const insert = async (pilotTournament, transaction) => {

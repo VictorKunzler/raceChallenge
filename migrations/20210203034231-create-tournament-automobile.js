@@ -1,7 +1,12 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Races', {
+    await queryInterface.createTable('TournamentAutomobilePilots', {
+      id: {
+        allowNull: false,
+        primaryKey: true,
+        type: Sequelize.UUID
+      },
       id: {
         allowNull: false,
         primaryKey: true,
@@ -17,17 +22,25 @@ module.exports = {
           key: 'id'
         }
       },
-      date: {
+      automobileId: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.UUID,
+        references: {
+          model: {
+            tableName: 'Automobiles'
+          },
+          key: 'id'
+        }
       },
-      laps: {
+      pilotId: {
         allowNull: false,
-        type: Sequelize.INTEGER
-      },
-      winner: {
-        allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.UUID,
+        references: {
+          model: {
+            tableName: 'Pilots'
+          },
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,
@@ -40,6 +53,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Races');
+    await queryInterface.dropTable('TournamentAutomobilePilots');
   }
 };

@@ -1,5 +1,13 @@
 import { Rule } from '../../models';
 
-const RuleRepository = {};
+const get = async () => {
+  return await Rule.findAll({
+    order: [['points', 'DESC']]
+  });
+};
 
-export default RuleRepository;
+const ruleRepository = {
+  get
+};
+
+export default ruleRepository;

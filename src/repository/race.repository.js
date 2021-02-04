@@ -1,10 +1,15 @@
 import { Race } from '../../models';
 
-const get = async (where, transaction) => {
-  return await Race.findAll({
-    where,
-    transaction
-  });
+const get = async (options) => {
+  return await Race.findAll(options);
+};
+
+const getCountPerTournament = async (tournamentId) => {
+  return await Race.count({
+    where: {
+      tournamentId
+    }
+  })
 };
 
 const insert = async (race, transaction) => {
@@ -13,6 +18,7 @@ const insert = async (race, transaction) => {
 
 const raceRepository = {
   get,
+  getCountPerTournament,
   insert
 };
 

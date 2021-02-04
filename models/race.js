@@ -16,7 +16,9 @@ module.exports = (sequelize, DataTypes) => {
 
   Race.init({
     tournamentId: DataTypes.STRING,
-    date: DataTypes.STRING
+    date: DataTypes.STRING,
+    laps: DataTypes.INTEGER,
+    winner: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Race',

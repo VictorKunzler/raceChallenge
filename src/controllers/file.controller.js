@@ -1,16 +1,13 @@
-import httoErrors from 'http-errors';
-import fileErrors from '../errors/file.errors';
-import fileService from "../services/file.service";
+import fileService from '../services/file.service';
 
-const uploadFile = async (file) => {
-  const { race } = file;
-
+const uploadFile = async (req, res) => {
+  const { race } = req.files;
   try {
-    return await fileService.processFile(race);
+    res.send(await fileService.processFile(race));
   } catch (e) {
     console.log(e);
-    throw new httoErrors.BadRequest(fileErrors[e.message]);
-  }
+    res.status(400).send(e.message);
+  };
 };
 
 const fileController = {

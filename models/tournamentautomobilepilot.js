@@ -3,7 +3,7 @@ const { Model } = require('sequelize');
 const { v4: uuid } = require('uuid');
 
 module.exports = (sequelize, DataTypes) => {
-  class Rule extends Model {
+  class TournamentAutomobilePilot extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -13,16 +13,16 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   };
-
-  Rule.init({
-    description: DataTypes.STRING,
-    points: DataTypes.INTEGER
+  TournamentAutomobilePilot.init({
+    tournamentId: DataTypes.STRING,
+    automobileId: DataTypes.STRING,
+    pilotId: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'Rule',
+    modelName: 'TournamentAutomobilePilot',
   });
 
-  Rule.beforeCreate(rule => rule.id = uuid());
+  TournamentAutomobilePilot.beforeCreate(tournamentTournamentPilot => tournamentTournamentPilot.id = uuid());
 
-  return Rule;
+  return TournamentAutomobilePilot;
 };

@@ -1,10 +1,7 @@
 import { Automobile } from '../../models';
 
-const getAutomobile = async (where, transaction) => {
-  return await Automobile.findAll({
-    where,
-    transaction
-  });
+const get = async (options) => {
+  return await Automobile.findAll(options);
 };
 
 const insert = async (automobile, transaction) => {
@@ -12,7 +9,7 @@ const insert = async (automobile, transaction) => {
 };
 
 const automobileRepository = {
-  getAutomobile,
+  get,
   insert
 };
 

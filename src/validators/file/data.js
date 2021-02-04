@@ -32,11 +32,11 @@ const validatePilotData = (race) => {
     const { error } = pilotSchema.validate(pilot);
     if (error) {
       console.log(error.message);
-      throw new Error(203);
+      throw new Error(error.message);
     }
 
     for (const key in uniqueData) {
-      if (uniqueData[key].indexOf(pilot[key]) > -1) throw new Error(203);
+      if (uniqueData[key].indexOf(pilot[key]) > -1) throw new Error(`${key} is duplicated`);
       uniqueData[key].push(pilot[key]);
     }
   });
@@ -46,7 +46,7 @@ const data = (race = {}) => {
   const { error } = raceSchema.validate(race);
   if (error) {
     console.log(error.message);
-    throw new Error(203);
+    throw new Error(error.message);
   }
 
   validatePilotData(race);
