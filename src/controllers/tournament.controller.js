@@ -31,8 +31,8 @@ const getAll = async (req, res) => {
 
 const getClassification = async (req, res) => {
   try {
-    const tournaments = await tournamentService.getClassification(req.params.year);
-    res.send(tournaments);
+    const classifications = await tournamentService.getClassification(req.params.year);
+    res.send(classifications);
   } catch (e) {
     console.log(e);
     res.status(400).send(e.message);

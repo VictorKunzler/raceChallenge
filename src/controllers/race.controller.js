@@ -18,10 +18,7 @@ const getClassification = async (req, res) => {
     const races = await raceService.getClassification(date);
 
     let response = [];
-    if (races) {
-      races.sort((raceA, raceB) => (raceA.position < raceB.position) ? -1 : 0);
-      response = await raceService.formatClassification(races);
-    }
+    if (races) response = await raceService.formatClassification(races);
 
     res.send(response);
   } catch (e) {

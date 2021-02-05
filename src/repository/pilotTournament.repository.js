@@ -12,10 +12,10 @@ const update = async (pilotTournament, attributes, transaction) => {
   return await pilotTournament.update(attributes, { transaction });
 };
 
-const PilotTournamentRepository = {
+const pilotTournamentRepository = {
   get,
   insert,
   update
 };
 
-export default PilotTournamentRepository;
+export default pilotTournamentRepository;

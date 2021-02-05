@@ -62,7 +62,8 @@ const insert = async ({ race, data }, transaction) => {
 
 const raceClassificationService = {
   get,
-  insert
+  insert,
+  setPoints
 };
 
 export default raceClassificationService;

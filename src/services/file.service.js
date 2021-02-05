@@ -49,7 +49,8 @@ const parseDataToTime = (data) => {
 const parseData = (data) => {
   const race = [];
 
-  data.forEach(pilot => {
+  data.forEach(dataValues => {
+    const pilot = { ...dataValues }
     parseDataToNumber(pilot);
     parseDataToTime(pilot);
 
@@ -90,6 +91,7 @@ const processFile = async (file) => {
 };
 
 const fileService = {
+  parseData,
   processFile
 };
 

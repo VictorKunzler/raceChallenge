@@ -48,7 +48,7 @@ const getFormatted = async ({ id, year }, allUrl) => {
       tournament_classification_url: `/tournaments/${year}/classification`,
       tournament_automobiles_url: `/tournaments/${year}/automobiles`,
       tournament_pilots_url: `/tournaments/${year}/pilots`
-      };
+    };
   }
 
   return {
@@ -206,10 +206,10 @@ const getPilots = async year => {
 
 const tournamentService = {
   get,
-  getOrInsert,
-  getFormatted,
-  getClassification,
   getAutomobiles,
+  getClassification,
+  getFormatted,
+  getOrInsert,
   getPilots
 };
 

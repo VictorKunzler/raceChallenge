@@ -52,7 +52,14 @@ const get = async (options) => {
 
 const getClassification = async (date) => {
   const [race] = await get({ where: { date } });
-  if (race) return await raceClassificationService.get({ where: { raceId: race.id } });
+  if (race) return await raceClassificationService.get({
+    where: {
+      raceId: race.id
+    },
+    order: [
+      ['position']
+    ]
+  });
 };
 
 const formatClassification = async (classifications) => {

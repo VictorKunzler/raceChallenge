@@ -14,7 +14,8 @@ export default function createDbConnection(server) {
 
   const sequelize = new Sequelize(database, username, password, {
     host: host,
-    dialect: dialect
+    dialect: dialect,
+    logging: false
   });
 
   sequelize
